@@ -1,0 +1,89 @@
+---
+title: "Lab 0 Solutions"
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,comment=" ")
+```
+
+
+```{r}
+flights <- read.csv('flights14.csv')
+head(flights)
+```
+
+## Task 1
+
+```{r}
+sort(table(flights$dest),decreasing = TRUE)[1:10]
+```
+
+## Task 2
+```{r}
+routes <- paste(flights$origin,flights$dest,sep="-")
+sort(table(routes),decreasing = TRUE)[1:3]
+```
+
+## Task 3
+
+```{r}
+flights6 <- flights[flights$month==6,]
+dat <- table(flights6$day,flights6$origin)
+dat
+```
+
+
+## Task 4
+
+```{r}
+dat2 <- table(routes,flights$carrier)
+dat2[dat2>0] <- 1
+colSums(dat2)
+```
+
+## Task 5
+```{r}
+dat5 <- aggregate(arr_delay~carrier,data=flights,FUN=mean)
+dat5[order(dat5$arr_delay,decreasing = FALSE),]
+```
+
+## Task 6
+
+```{r}
+dat6 <- do.call(data.frame,
+                aggregate(distance~carrier,
+                          data=flights,FUN=function(x) c(total=sum(x),mean=mean(x))))
+# ordering by total miles flown
+dat6[order(dat6$distance.total,decreasing = TRUE),]
+```
+
+
+```{r}
+# mean
+dat6[order(dat6$distance.mean,decreasing = TRUE),]
+```
+
+## Task 7
+```{r}
+del_dep <- flights[flights$dep_delay>0,]
+del_dep['ontime'] <- del_dep$arr_delay <= 0
+print(paste("Number of flights that departed late and are on-time:",
+            sum(del_dep$ontime)))
+print(paste("Fraction of flights that departed late and are on-time:",
+            round(mean(del_dep$ontime),3)))
+```
+
+```{r}
+with(del_dep,{
+  boxplot(distance~ontime)
+})
+```
+
+```{r}
+with(del_dep,{
+  boxplot(sqrt(distance)~ontime)
+})
+```
+
