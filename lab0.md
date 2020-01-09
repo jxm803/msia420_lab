@@ -2,14 +2,14 @@
 
 ## Date: January 9, 2020
 
-This is an introductory lab session meant to test your data manipulation skills in R. This lab consists of a set of tasks analyzing the NYC-flights14 dataset. It contains flights data from the Bureau of Transporation Statistics for all the flights that departed from New York City airports from Jan-Oct 2014. The dataset is available at:
+This is an introductory lab session meant to test your data manipulation skills in R. This lab consists of a set of tasks analyzing the NYC-flights14 dataset. It contains flights' data from the Bureau of Transporation Statistics for all the flights that departed from New York City airports beteen Jan and Oct 2014. The dataset is available at:
 
 https://raw.githubusercontent.com/Rdatatable/data.table/master/vignettes/flights14.csv 
 
-## Questions
+## Tasks
 
 1. Find the 10 most common destinations from NYC airports from Jan-Oct 2014?
-2. Find the top 3 routes (origin-dest pair) with the maximum number of flights from Jan 2014-Oct 2014.
+2. Find the top 3 routes (origin-dest pair) with the maximum number of flights.
 3. For each NYC airport (JFK,LGA and EWR), do a plot of the total number of flights each day in the month of June(6).
 4. Find the number of unique routes served by each carrier
 5. Rate the airlines (carrier) according to their on-time performance (arr_delay).
