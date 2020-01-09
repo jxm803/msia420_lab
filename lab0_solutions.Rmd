@@ -8,6 +8,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE,comment=" ")
 ```
 
+Since a lot of you have used `dplyr` for analysis, this solution set uses an alternative approach using `base` R functions.
+
 
 ```{r}
 flights <- read.csv('flights14.csv')
