@@ -10,7 +10,7 @@ https://raw.githubusercontent.com/Rdatatable/data.table/master/vignettes/flights
 
 1. Find the 10 most common destinations from NYC airports from Jan-Oct 2014?
 2. Find the top 3 routes (origin-dest pair) with the maximum number of flights.
-3. For each NYC airport (JFK,LGA and EWR), do a plot of the total number of flights each day in the month of June(6).
+3. For each NYC airport (JFK,LGA and EWR), plot the total number of flights each day in the month of June(6).
 4. Find the number of unique routes served by each carrier
 5. Rate the airlines (carrier) according to their on-time performance (arr_delay).
 6. Rate the airlines according to the total number of miles flown - do both unweighted and weighted (weighted by the total number of flights).
